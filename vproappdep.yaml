@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vproapp
+  name: vproapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vproapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vproapp
+    spec:
+      containers:
+      - image: web927/vprofileapp:V1
+        name: vprofileapp
+        ports:
+        - containerPort: 8080
+        resources: {}
+      initContainers:
+        - name: init-mydb
+          image: busybox
+          command: ['sh','-c','until nslookup vprodb; db echo waiting for mydb;sleep 2; done;']
+status: {}
