@@ -21,7 +21,7 @@ spec:
       - image: web927/vprofiledb:V1
         name: vprofiledb
         args:
-          - "ignore-db-dir=lost+found"
+          - "--ignore-db-dir=lost+found"
         volumeMounts:
           - mountPath: /var/lib/mysql
             name: vpro-db-data
@@ -31,7 +31,7 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: app-sceret
+                name: app-secret
                 key: db-pass
       volumes:
         - name: vpro-db-data
