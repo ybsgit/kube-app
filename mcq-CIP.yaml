@@ -3,14 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: vpromc
-  name: vprocache01
+    app: vpromq01
+  name: vpromq01
 spec:
   ports:
-  - port: 11211
+  - port: 15672
     protocol: TCP
-    targetPort: 11211
+    targetPort: 15672
   selector:
-    app: vpromc
+    app: vpromq01
 status:
   loadBalancer: {}
