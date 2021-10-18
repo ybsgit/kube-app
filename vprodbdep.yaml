@@ -36,5 +36,5 @@ spec:
       volumes:
         - name: vpro-db-data
           gcePersistentDisk:
-          pdName: my-data-disk
-          fsType: ext4
+            pdName: my-data-disk
+            fsType: ext4
