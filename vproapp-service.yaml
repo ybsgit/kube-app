@@ -12,6 +12,6 @@ spec:
     targetPort: 8080
   selector:
     app: vproapp
-  type: load-balancer
+  type: LoadBalancer
 status:
   loadBalancer: {}
